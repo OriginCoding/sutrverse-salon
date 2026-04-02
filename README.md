@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SutrVerse Salon Management System
 
-## Getting Started
+A full-stack salon booking and management system built using Next.js, Prisma, and PostgreSQL.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 👤 Customer (Public)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Select stylist and date
+* View real-time available slots
+* Book appointment (no login required)
+* Prevents double booking
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 💇 Staff (Walk-in)
 
-## Learn More
+* Add walk-in customers instantly
+* Automatically assigns next available slot
 
-To learn more about Next.js, take a look at the following resources:
+### 📊 Admin Dashboard (Demo)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* View today's bookings
+* Estimated revenue
+* Stylist utilization
+* Appointment list
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧠 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Next.js 15 (App Router)
+* TypeScript
+* Prisma ORM
+* PostgreSQL (Neon)
+* Tailwind CSS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Key Design Decisions
+
+* **UTC Time Storage:** Stored in UTC, displayed in local timezone (IST)
+* **Slot Generation:** 30-minute intervals (9 AM – 10 PM)
+* **Double Booking Prevention:** Unique constraint on (stylistId, startsAt)
+* **MVP Scope:** No authentication, simplified pricing
+
+---
+
+## 📌 Notes for Reviewers
+
+* Use **Book Appointment** to create bookings
+* Use **Walk-in (Staff Only)** to simulate manual entries
+* Use **Admin Dashboard (Demo)** to view data
+
+---
+
+## 🏁 Goal
+
+Focus on clean architecture, system design, and real-world trade-offs instead of overengineering.
